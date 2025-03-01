@@ -3,7 +3,7 @@
 
 _start:
     LDR sp, =stack_top
-    LDR r2, =hello_msg
+    LDR r0, =hello_msg
     BL uart_puts
     B .
 
