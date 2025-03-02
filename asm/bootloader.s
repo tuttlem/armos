@@ -2,14 +2,9 @@
 .global _start
 
 _start:
-    LDR sp, =stack_top
-    LDR r0, =hello_msg
-    BL uart_puts
-    B .
-
-.data
-hello_msg:
-    .asciz "Hello, ARM World!\n"
+    LDR sp, =stack_top  @ Set up the stack
+    BL kmain            @ Call the C main function
+    B .                 @ Hang forever
 
 .section .bss
 .align 4
